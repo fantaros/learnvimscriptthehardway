@@ -1,0 +1,57 @@
+显示信息
+================
+
+最先看到的vimscript命令是`echo`和`echom`。
+
+你可以在vim中通过运行`:help echo`和`:help echom`来查看他们详细文档。通读本书时，
+每当你遇到一个新的命令，你都需要通过`:help`来看一下文档。
+
+试试`echo`吧少年：
+
+    :::vim
+    :echo "Hello, world!"
+
+你就会在窗口的底部看到一个`Hello, world!`
+
+持久化信息
+------------------
+
+再来试试`echom`
+
+    :::vim
+    :echom "Hello again, world!"
+
+跟刚才一样，能看到一个`Hello again, world!`消息在窗口底部。
+不同的是，运行下面的命令：
+
+    :::vim
+    :messages
+
+你就能看到一个消息列表。`Hello, world!`并不会在这个列表里面，但是
+`Hello again, world!`就会在里面。
+
+当你要写一些复杂的vimscript时，你就需要通过print来调试程序。`:echo`可以用来输出，
+只是会主动消失；`:echom`输出的消息，会被保存下来，通过`:messages`可以查看。
+
+注释
+--------
+
+继续讲下去之前，咱们先来看看怎么添加注释。你可以通过双引号`"`来添加注释：
+
+    :::vim
+    " Make space more useful
+    nnoremap <space> za
+
+这个并不总是正常工作，在一些犄角旮旯就不会正常工作，不过绝大时候都会工作。过一会
+儿，我们再来讨论这个。
+
+练习
+---------
+
+读文档 `:help echo`.
+
+读文档 `:help echom`.
+
+读文档 `:help messages`.
+
+给你的`~/.vimrc`里面添加一行代码，让vim启动是打印一个猫脸(`>^.^<`)。
